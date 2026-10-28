@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="1050" viewBox="0 0 1320 1050" role="img">
+<title>Q 按行切块，每一块 Q 都扫描全部 K、V 行</title>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="660" y="45.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="34" fill="#172b4d" text-anchor="middle" dominant-baseline="central">固定 Q 的两行，让它们依次看完全部 K、V</text>
+<text x="510" y="134.5" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="27" fill="#172b4d" text-anchor="middle" dominant-baseline="central">K 第 0、1 行：[0]、[0]</text>
+<text x="510" y="175.5" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="27" fill="#172b4d" text-anchor="middle" dominant-baseline="central">对应 V：[10]、[20]</text>
+<text x="1000" y="134.5" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="27" fill="#172b4d" text-anchor="middle" dominant-baseline="central">K 第 2、3 行：[1]、[1]</text>
+<text x="1000" y="175.5" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="27" fill="#172b4d" text-anchor="middle" dominant-baseline="central">对应 V：[30]、[40]</text>
+<text x="145" y="314.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="27" fill="#172b4d" text-anchor="middle" dominant-baseline="central">Q 第 0、1 行</text>
+<text x="145" y="355.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="27" fill="#172b4d" text-anchor="middle" dominant-baseline="central">q0 = [0]</text>
+<text x="145" y="396.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="27" fill="#172b4d" text-anchor="middle" dominant-baseline="central">q1 = [1]</text>
+<rect x="310" y="260" width="400" height="190" rx="18" fill="#eaf3ff" stroke="#7da8dd" stroke-width="1.5"/>
+<text x="510.0" y="315.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="26" fill="#172b4d" text-anchor="middle" dominant-baseline="central">第 1 轮：同时处理这两行</text>
+<text x="510.0" y="355.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="26" fill="#172b4d" text-anchor="middle" dominant-baseline="central">q0 得分：[0, 0]</text>
+<text x="510.0" y="395.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="26" fill="#172b4d" text-anchor="middle" dominant-baseline="central">q1 得分：[0, 0]</text>
+<rect x="800" y="260" width="400" height="190" rx="18" fill="#eaf3ff" stroke="#7da8dd" stroke-width="1.5"/>
+<text x="1000.0" y="315.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="26" fill="#172b4d" text-anchor="middle" dominant-baseline="central">第 2 轮：Q 保持不变</text>
+<text x="1000.0" y="355.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="26" fill="#172b4d" text-anchor="middle" dominant-baseline="central">q0 得分：[0, 0]</text>
+<text x="1000.0" y="395.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="26" fill="#172b4d" text-anchor="middle" dominant-baseline="central">q1 得分：[1, 1]</text>
+<polyline points="710,355 800,355" fill="none" stroke="#8393a7" stroke-width="2"/>
+<polygon points="800,355 788.5914266954252,348.7674679981454 788.5914266954252,361.2325320018546" fill="#8393a7"/>
+<polyline points="1000,450 1000,525 510,525 510,650" fill="none" stroke="#8393a7" stroke-width="2"/>
+<polygon points="510,650 516.2325320018547,638.5914266954252 503.7674679981454,638.5914266954252" fill="#8393a7"/>
+<text x="820" y="590.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="26" fill="#172b4d" text-anchor="middle" dominant-baseline="central">前两行输出完成，再换 Q 第 2、3 行</text>
+<text x="145" y="704.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="27" fill="#172b4d" text-anchor="middle" dominant-baseline="central">Q 第 2、3 行</text>
+<text x="145" y="745.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="27" fill="#172b4d" text-anchor="middle" dominant-baseline="central">q2 = [2]</text>
+<text x="145" y="786.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="27" fill="#172b4d" text-anchor="middle" dominant-baseline="central">q3 = [3]</text>
+<rect x="310" y="650" width="400" height="190" rx="18" fill="#e8f5ed" stroke="#7caf8a" stroke-width="1.5"/>
+<text x="510.0" y="705.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="26" fill="#172b4d" text-anchor="middle" dominant-baseline="central">第 3 轮：K、V 从头扫描</text>
+<text x="510.0" y="745.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="26" fill="#172b4d" text-anchor="middle" dominant-baseline="central">q2 得分：[0, 0]</text>
+<text x="510.0" y="785.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="26" fill="#172b4d" text-anchor="middle" dominant-baseline="central">q3 得分：[0, 0]</text>
+<rect x="800" y="650" width="400" height="190" rx="18" fill="#e8f5ed" stroke="#7caf8a" stroke-width="1.5"/>
+<text x="1000.0" y="705.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="26" fill="#172b4d" text-anchor="middle" dominant-baseline="central">第 4 轮：继续下一块 K、V</text>
+<text x="1000.0" y="745.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="26" fill="#172b4d" text-anchor="middle" dominant-baseline="central">q2 得分：[2, 2]</text>
+<text x="1000.0" y="785.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="26" fill="#172b4d" text-anchor="middle" dominant-baseline="central">q3 得分：[3, 3]</text>
+<polyline points="710,745 800,745" fill="none" stroke="#8393a7" stroke-width="2"/>
+<polygon points="800,745 788.5914266954252,738.7674679981453 788.5914266954252,751.2325320018547" fill="#8393a7"/>
+<text x="660" y="925.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="29" fill="#172b4d" text-anchor="middle" dominant-baseline="central">每轮取下一组 K 行，同时取同编号的 V 行。</text>
+<text x="660" y="985.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="25" fill="#52657d" text-anchor="middle" dominant-baseline="central">按行切块，保留每行的完整向量；图中每行恰好只有 1 个数。</text>
+</svg>

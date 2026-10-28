@@ -1,0 +1,34 @@
+{
+  "units": "us unless specified; ts/dur in Chrome Trace are microseconds",
+  "square_only": {
+    "source": "lecture001-reports/square_only.json",
+    "sha256": "b0cf78d32343546603c32c05d49946a11e7af5a6fb44e471c0a2216fdb6ab374",
+    "kernel_count": 5,
+    "kernel_durations_us": [
+      9.243,
+      10.203,
+      11.419,
+      11.579,
+      11.611
+    ],
+    "kernel_total_us": 54.055,
+    "kernel_mean_us": 10.811,
+    "htod_count": 0
+  },
+  "with_copy": {
+    "source": "lecture001-reports/with_copy.json",
+    "sha256": "79ca4fe816556ded4b36db0fbfd20271e292291d15fe3212974a183255ad9e85",
+    "kernel_count": 1,
+    "kernel_us": 10.299,
+    "htod_count": 1,
+    "htod_us": 683.293,
+    "htod_bytes": 4194304,
+    "active_total_us": 693.592,
+    "gap_us": 67.456,
+    "first_activity_to_last_end_us": 761.048,
+    "gpu_annotation_us": 761.05,
+    "cpu_annotation_us": 12549.394,
+    "copy_over_kernel_ratio": 66.34556753082823,
+    "copy_fraction_of_active": 0.9851512128167569
+  }
+}

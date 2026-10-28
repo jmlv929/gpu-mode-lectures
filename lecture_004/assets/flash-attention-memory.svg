@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1280" viewBox="0 0 1120 1280" role="img">
+<title>FlashAttention 的显存、smem 与寄存器数据流</title>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<rect x="180" y="30" width="720" height="150" rx="18" fill="#eaf3ff" stroke="#7da8dd" stroke-width="1.5"/>
+<text x="540.0" y="79.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="34" fill="#172b4d" text-anchor="middle" dominant-baseline="central">GPU 显存：完整 Q、K、V</text>
+<text x="540.0" y="131.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="34" fill="#172b4d" text-anchor="middle" dominant-baseline="central">以及最终输出 O</text>
+<polyline points="540,180 540,275" fill="none" stroke="#8393a7" stroke-width="2"/>
+<polygon points="540,275 546.2325320018547,263.5914266954251 533.7674679981453,263.5914266954252" fill="#8393a7"/>
+<text x="650" y="228.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="26" fill="#52657d" text-anchor="middle" dominant-baseline="central">分块加载</text>
+<rect x="180" y="275" width="720" height="150" rx="18" fill="#eaf3ff" stroke="#7da8dd" stroke-width="1.5"/>
+<text x="540.0" y="327.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="30" fill="#172b4d" text-anchor="middle" dominant-baseline="central">smem：当前 Q、K、V 数据块</text>
+<text x="540.0" y="373.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="30" fill="#172b4d" text-anchor="middle" dominant-baseline="central">Q 块复用，K、V 块分轮替换</text>
+<polyline points="500,425 500,505" fill="none" stroke="#8393a7" stroke-width="2"/>
+<polygon points="500,505 506.2325320018546,493.5914266954251 493.7674679981454,493.5914266954252" fill="#8393a7"/>
+<rect x="140" y="505" width="680" height="150" rx="18" fill="#eaf3ff" stroke="#7da8dd" stroke-width="1.5"/>
+<text x="480.0" y="557.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="30" fill="#172b4d" text-anchor="middle" dominant-baseline="central">寄存器：线程持有的局部数据</text>
+<text x="480.0" y="603.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="30" fill="#172b4d" text-anchor="middle" dominant-baseline="central">计算当前小块得分 s、指数权重 w</text>
+<polyline points="480,655 480,735" fill="none" stroke="#8393a7" stroke-width="2"/>
+<polygon points="480,735 486.2325320018546,723.5914266954252 473.7674679981454,723.5914266954252" fill="#8393a7"/>
+<rect x="140" y="735" width="680" height="150" rx="18" fill="#eaf3ff" stroke="#7da8dd" stroke-width="1.5"/>
+<text x="480.0" y="787.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="30" fill="#172b4d" text-anchor="middle" dominant-baseline="central">寄存器：跨块保留 m、l、u</text>
+<text x="480.0" y="833.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="30" fill="#172b4d" text-anchor="middle" dominant-baseline="central">m：最大分数   l：分母   u：分子</text>
+<polyline points="820,810 1030,810 1030,350 900,350" fill="none" stroke="#8393a7" stroke-width="2"/>
+<polygon points="900,350 911.4085733045748,356.2325320018546 911.4085733045748,343.7674679981454" fill="#8393a7"/>
+<text x="960" y="518.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="24" fill="#52657d" text-anchor="middle" dominant-baseline="central">继续下一块</text>
+<text x="960" y="555.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="24" fill="#52657d" text-anchor="middle" dominant-baseline="central">K、V</text>
+<text x="960" y="592.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="24" fill="#52657d" text-anchor="middle" dominant-baseline="central">保留累计量</text>
+<polyline points="480,885 480,1050" fill="none" stroke="#8393a7" stroke-width="2"/>
+<polygon points="480,1050 486.2325320018546,1038.591426695425 473.7674679981454,1038.591426695425" fill="#8393a7"/>
+<text x="650" y="945.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="26" fill="#52657d" text-anchor="middle" dominant-baseline="central">全部块处理完</text>
+<text x="650" y="985.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="26" fill="#52657d" text-anchor="middle" dominant-baseline="central">O = u / l</text>
+<rect x="180" y="1050" width="720" height="120" rx="18" fill="#e8f5ed" stroke="#7caf8a" stroke-width="1.5"/>
+<text x="540.0" y="1110.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="32" fill="#172b4d" text-anchor="middle" dominant-baseline="central">最终 O 写回 GPU 显存</text>
+<text x="540" y="1225.0" font-family="Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="24" fill="#52657d" text-anchor="middle" dominant-baseline="central">简化数据流：局部得分可丢弃，历史贡献已合并进 m、l、u。</text>
+</svg>
